@@ -4,63 +4,51 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-
-      .body_text{
-        font-family: Roboto;
-        color: rgb(85,85,85);
-        font-size: 20px
-      }
-      h1 {
-        font: size: 40px;
-        color: red;
-        font-family: Roboto;
-        font-weight: normal;
-        text-align: center;
-      }
-    
-      #banner {
-        width: 100%;
-        height: 350px;
-        object-fit: cover;
-      }
-    
-      h2{
-        font-family: Roboto;
-        font-size: 32px;
-        color: rgb(100, 100, 100);
-        text-align: center;
-        font-weight: normal;
-      }
-  
-      #container{
-        max-width: 720px;
-        margin: 0 auto 0 auto;
-       
-      }
-    </style>  
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+      rel="stylesheet" integrity="sha384- 
+      T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <style>
+        #banner{
+          height: 360px;
+          width: 100%;
+        }
+      </style>
     <title>------Sai--------</title>
     </head>
     <body>
-      <div id = container>
-    <h1>Flask_Practice</i></h1>
-      <img id=banner src="https://images.unsplash.com/photo-1682686578615-39549501dd08? 
-              q=80&w=2070&auto=format&fit=crop&ixlib=rb-                
-              4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+      <div class="container">
+    <h1 class="text-center mt-2 mb-2" >{{company}}</i></h1>
+      <img class="img-fluid" id="banner" 
+      src="https://images.unsplash.com/photo-1703434797402- 
+      1a557d664894?q=80&w=2070&auto=format&fit=crop&ixlib=rb- 
+ 4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
       
-        <h2>About Me</h2>
-        <p class="body_text">There are many variations of passages of Lorem Ipsum available, but the 
-        majority have suffered alteration in some form, by injected humour, or randomised words which 
-        don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you 
-        need to be sure there isn't anything embarrassing hidden in the middle of the text. All the 
-        Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+        <h2 class="text-center mt-2 mb-2">About Me</h2>
+        <p class="lead">There are many variations of passages of Lorem Ipsum 
+        available, but the 
+        majority have suffered alteration in some form, by injected humour, or 
+        randomised words which 
+        don't look even slightly believable. If you are going to use a passage 
+        of Lorem Ipsum, you 
+        need to be sure there isn't anything embarrassing hidden in the middle 
+        of the text. All the 
+        Lorem Ipsum generators on the Internet tend to repeat predefined chunks 
+        as necessary</p>
     
-    <h2>Open Positions</h2>
-    <p class="body_text">ToDo - show the jobs here</p>
-    <div style='text-align:center;'>
-    <button>Contact Us</button>
-      <p>CopyRight,2023,sai</p>
-      </div>
+    <h2 mt-2 mb-2 class="text-center">Open Positions</h2><hr>
+
+<!--Connecting the flask code with HTML using Jinja template -->
+    <div>
+      {% for job in jobs %}
+      {% include "job_items.html" %} <!-- linking the job_items.html file to the index.html using Jinja template -->
+      {% endfor %}
+    </div>
+
+        
+    <div class="text-center">
+      <button type="button" class="btn btn-primary btn-lg">Contact us</button>
+      <p class='mt-3'>CopyRight 2023,sai</p>
+    </div>
       </div>
     </body>
     </html>
