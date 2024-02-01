@@ -1,7 +1,7 @@
 
-    <div style="margin-bottom:16px"; class="border-bottom row">
+<div style="margin-bottom:16px"; class="border-bottom row">
       
-     <div class = "col-9">
+  <div class = "col-9">
        <h4 style = "color:rgb(120,120,120)">
          {{job['title']}}  <!-- Jinja Template code for accessing the jobs written in the app.py file (Dynamically Displaying the job openings and other info if it is provided in the Data_Base )   -->
        </h4>
@@ -16,8 +16,16 @@
           {{job['salary']}}
         </div>
         {% endif %}
-     </div >
-      <div class='col-2'>
-        <button type="button" class="btn btn-outline-primary">Apply</button>
+        <div>
+          <b>Experience :-</b>
+          {{job['Experience']}}
+        </div>
+  </div >
+      <div class="col-2 padding-right:16px">
+        <a href="mailto:mohansai1115@gmail.com
+                ?subject=Application for {{job['title']}}">
+          <button type="button" class="btn btn-outline-primary">Apply</button>
+        </a>
+        
       </div>
-    </div>
+</div>
